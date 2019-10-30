@@ -13,5 +13,12 @@ node_js:
   - '10'
   - '12'
   - 'stable'
+matrix:
+  exclude:
+    - node_js: 'stable'
+      os: 'windows'
+  include:
+    - node_js: 'latest'
+      os: 'windows'
 before_install:
   - 'if [[ $TRAVIS_OS_NAME != windows ]]; then nvm install-latest-npm; fi'
