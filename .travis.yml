@@ -22,3 +22,4 @@ matrix:
       os: 'windows'
 before_install:
   - 'if [[ $TRAVIS_OS_NAME != windows ]]; then nvm install-latest-npm; fi'
+  - 'if [[ $TRAVIS_OS_NAME == windows ]] && [[ $TRAVIS_NODE_VERSION == 0.8 ]]; then npm install -g npm@1.4.28 && npm install -g npm@4.5.x; fi'
